@@ -8,12 +8,16 @@ function Resized() {
     Write-Host "Height: $($Form.Height)"
 }
 
+function Resize_Button() {
+    
+}
+
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 $Form = New-Object system.Windows.Forms.Form
 $Form.Text = "Working with WinForms"
-#$Form.Width = 585
-#$Form.Height = 500
+$Form.Width = 350
+$Form.Height = 550
 $Form.AutoScroll = $True
 $Form.AutoScaleMode = "Dpi"
 $Form.Add_Resize({ Resized })
@@ -28,7 +32,7 @@ $ButtonHeight = 25
 
 $DistanceTop = 35
 
-$Win10Left = 150
+$Win10Left = 50
 
 # Windows 10 Section
 
@@ -37,7 +41,7 @@ $Win10Label.Text = "Windows 10"
 $Win10Label.AutoSize = $True
 $Win10Label.Font = $LabelFont
 $Win10Label.Top = 10
-$Win10Label.Left = 200
+$Win10Label.Left = 150
 
 $Win10AddDomain = new-Object System.Windows.Forms.Button
 $Win10AddDomain.add_click({& "$PSScriptRoot\Win10\add-domain\AddComp2Domain_Work.ps1"})
